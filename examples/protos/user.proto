@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/descriptor.proto";
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+option java_package = "com.example.user";
+option java_outer_classname = "UserProto";
+option objc_class_prefix = "HLW";
+
+service UserService {
+  rpc UpdateUser (UpdateUserRequest) returns (google.protobuf.Empty) {}
+  rpc DeleteUser (DeleteUserRequest) returns (google.protobuf.Empty) {}
+}
+
+message UpdateUserRequest {
+  string subject = 1;
+  string username = 3;
+  string email = 4;
+  string displayName = 5;
+  string phoneNumber = 6;
+  string picture = 7;
+}
+
+message DeleteUserRequest {
+  string subject = 1;
+}
+
+
