@@ -1,7 +1,7 @@
 FROM alpine:edge
 
-ARG PROTO_VERSION=3.18.1
-ARG GRPCWEB_VERSION=1.3.0
+ARG PROTO_VERSION=3.19.4
+ARG GRPCWEB_VERSION=1.3.1
 
 LABEL version=${GRPCWEB_VERSION}
 LABEL maintainer="nrhrhysd616 <nrhrhysd616@becrazy.jp>"
