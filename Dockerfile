@@ -25,4 +25,4 @@ ADD scripts/entrypoint.sh /
 VOLUME [ "/protos", "/out" ]
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-CMD [ "--grpc-web_out=import_style=commonjs,mode=grpcwebtext" ]
+CMD [ "--js_out=commonjs", "--grpc-web_out=import_style=commonjs,mode=grpcwebtext" ]
