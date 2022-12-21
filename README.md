@@ -10,9 +10,10 @@ This Docker image uses **[grpc-web](https://github.com/grpc/grpc-web)**.
 
 This docker image has two volumes: `/out` and `/protos`.  
 `/out` is the directory to write the javascript or typescript compiled files to.  
-`/protos` is the directory containing your proto files.
+`/protos` is the directory containing your proto files.  
+By passing these two volumes, the compilation file can be output to any directory.
 
-You could generate JavaScript compiled files for the examples by running the following:
+You can clone this Git project and you could generate JavaScript compiled files for the examples by running the following:
 
 ```sh
 $docker run --rm \
@@ -21,8 +22,7 @@ $docker run --rm \
   nrhrhysd616/protoc-gen-grpc-web
 ```
 
-By default JavaScript files are generated in /out.  
-This can be changed by passing the `--grpc-web_out` and `--js_out` parameters to the container.  
+This can be changed by passing the `--grpc-web_out` parameters to the container.  
 See [GitHub on grpc-web](https://github.com/grpc/grpc-web#client-configuration-options) for more information.
 
 For example, to generate `commonjs` + `d.ts` files for the examples(Experimental):
@@ -32,7 +32,6 @@ $docker run --rm \
   -v $(pwd)/examples/out:/out \
   -v $(pwd)/examples/protos:/protos \
   nrhrhysd616/protoc-gen-grpc-web \
-  --js_out=import_style=commonjs \
   --grpc-web_out=import_style=commonjs+dts,mode=grpcwebtext
 ```
 
