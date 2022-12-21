@@ -1,4 +1,4 @@
-VERSION = 1.3.1
+VERSION = 1.4.2
 BUILDX_NAME = buildx_buildkit_multiplatform-builder0
 
 ifdef version

@@ -1,7 +1,7 @@
 FROM alpine:edge
 
-ARG PROTO_VERSION=3.19.4
-ARG GRPCWEB_VERSION=1.3.1
+ARG PROTO_VERSION=21.12
+ARG GRPCWEB_VERSION=1.4.2
 
 LABEL version=${GRPCWEB_VERSION}
 LABEL maintainer="nrhrhysd616 <nrhrhysd616@becrazy.jp>"
@@ -25,4 +25,4 @@ ADD scripts/entrypoint.sh /
 VOLUME [ "/protos", "/out" ]
 
 ENTRYPOINT [ "/entrypoint.sh" ]
-CMD [ "--js_out=commonjs", "--grpc-web_out=import_style=commonjs,mode=grpcwebtext" ]
+CMD [ "--grpc-web_out=import_style=commonjs,mode=grpcwebtext" ]
